@@ -117,7 +117,6 @@ class MultiServerThread extends Thread {
 							key = json.get("key").getAsString();
 							attribute = json.get("attribute").getAsInt();
 							data = json.get("data").getAsString();
-							data = sanitizeMarks(data);
 							sub = mvConn.mvSub("JWRITE", 5);
 							sub.setArg(0, file);
 							sub.setArg(1, key);
@@ -130,7 +129,6 @@ class MultiServerThread extends Thread {
 							file = json.get("file").getAsString().toUpperCase();
 							key = json.get("key").getAsString();
 							data = json.get("data").getAsString();
-							data = sanitizeMarks(data);
 							sub = mvConn.mvSub("JWRITE", 4);
 							sub.setArg(0, file);
 							sub.setArg(1, key);
@@ -210,13 +208,6 @@ class MultiServerThread extends Thread {
 				e.printStackTrace();
 			}
 		}
-	}
-
-	private String sanitizeMarks(String data) {
-		data = data.replaceAll("~AM", MVConstants.AM);
-		data = data.replaceAll("~VM", MVConstants.VM);
-		data = data.replaceAll("~SM", MVConstants.SM);
-		return data;
 	}
 
 	/*
