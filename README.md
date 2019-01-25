@@ -23,13 +23,14 @@ Will return either false (0) or the raw record. Receiving program needs to sanit
 `{
 	"command": "JWRITE",
 	"file": "CUSTOMER",
-	"key": "CUST.KEY~AMattr1~AMattr2~AMattr<3,1>~VMattr<3,1,1>~SMattr<3,1,2>"
+	"key": "CUST.KEY",
+	"data": "CUST.KEY$AMattr1$AMattr2$AMattr<3,1>$VMattr<3,1,1>$SMattr<3,1,2>"
 }`
 
 Returns boolean
 
 ## Things of Note
-* Due to encoding issues, I found it easier to send files with @AM = '~AM', @VM = '~VM', and @SM = '~SM'. I'm sure there's a better way.
+* For visualization above, $AM(VM,SM) were used instead of the true char.
 * Makes use of my repo MVUtils to output formatted data from mvdbms. Uses DICT file to run OCONV on attributes.
 * Makes use of a pool of connections to the mvdbms. Starts with a single connection but if a request comes in and all connections are used, a new one will spawn (unless current number of connections are at max) and return to the pool.
 
