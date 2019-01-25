@@ -29,8 +29,7 @@ class Mvbase {
         $this->AM = chr(253);
         $this->AM = chr(252);
 
-        $config = json_decode(file_get_contents('configuration.json'), true);
-        $this->conn = new PDO('mysql:host='.$config['host'].';dbname='.$config['db'], $config['user'], $config['pass']);
+        $this->conn = new PDO('mysql:host=;dbname=', 'user', 'pass');
         if ($file != 'sub') {
             //Get linked multivalue data
             $statement = $this->conn->prepare("
