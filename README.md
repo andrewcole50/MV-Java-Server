@@ -41,13 +41,12 @@ Returns boolean
     * Named fields for attributes. Allows: $mv->description == $mv->record[7]
 * This was heavily modified before uploading so there may be some bugs.
 ### Usage
-`
-$mv = new Mvbase('CUSTOMER', 'CUST.KEY')
+
+`$mv = new Mvbase('CUSTOMER', 'CUST.KEY')
 echo $mv->custName; //or $mv->record[i]
 $mv->custName = 'John Appleseed'; // or $mv->record[i] = 'John Appleseed'
 $mv->save();
 
 $sub = new Mvbase('sub')
 $response = $sub->gosub('SUB.NAME', array("param1", "param2"), 3);
-echo $response[2];
-`
+echo $response[2];`
