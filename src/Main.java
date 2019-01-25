@@ -17,8 +17,8 @@ public class Main {
 	static String MVAccount = "";               // MV Account Name
 	static String MVPassword = "";              // MV Account Password
 	private static String MVHostIP = "";        // Server hostname or port
-	private static String MVPort = "0";             // Port on server
-	private static int SocketPort = 0;       // Port for this to listen for requests
+	private static String MVPort = "0";         // Port on server
+	private static int SocketPort = 0;          // Port for this to listen for requests
 	private static String platform = "mvBase";  // Platform: mvBase and d3 should work
 	private static int NumberOfLines = 1;       // Number of licenses/lines to keep in pool
 	
